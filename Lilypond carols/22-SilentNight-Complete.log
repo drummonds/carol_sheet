@@ -1,0 +1,19 @@
+# -*-compilation-*-
+Processing `C:/Users/h3/cloudstation/A_Letter-2021/2021-12-10 Lilypond carols/22-SilentNight-Complete.ly'
+Parsing...
+C:/Users/h3/cloudstation/A_Letter-2021/2021-12-10 Lilypond carols/22-SilentNight-Complete.ly:132:33: error: syntax error, unexpected \context, expecting \sequential or \simultaneous or << or '{'
+		\lyricsto "sop" 
+                                \context Lyrics = "stanza-1" {
+C:/Users/h3/cloudstation/A_Letter-2021/2021-12-10 Lilypond carols/22-SilentNight-Complete.ly:135:33: error: syntax error, unexpected \context, expecting \sequential or \simultaneous or << or '{'
+		\lyricsto "sop" 
+                                \context Lyrics = "stanza-2" {
+C:/Users/h3/cloudstation/A_Letter-2021/2021-12-10 Lilypond carols/22-SilentNight-Complete.ly:138:33: error: syntax error, unexpected \context, expecting \sequential or \simultaneous or << or '{'
+		\lyricsto "sop" 
+                                \context Lyrics = "stanza-3" {
+C:/Users/h3/cloudstation/A_Letter-2021/2021-12-10 Lilypond carols/22-SilentNight-Complete.ly:123:12: error: errors found, ignoring music expression
+	   
+           \context ChoirStaff <<
+C:/Users/h3/cloudstation/A_Letter-2021/2021-12-10 Lilypond carols/22-SilentNight-Complete.ly:173:2: error: Unfinished main input
+}
+ 
+fatal error: failed files: "C:\\Users\\h3\\cloudstation\\A_Letter-2021\\2021-12-10 Lilypond carols\\22-SilentNight-Complete.ly"

@@ -1,0 +1,40 @@
+version: '3'
+
+tasks:
+  gen:
+    desc: Generate the carol booklet PDF (A5 pages)
+    cmds:
+      - go run main.go
+      - pdflatex -interaction=nonstopmode carol_booklet.tex
+      - pdflatex -interaction=nonstopmode carol_booklet.tex
+    sources:
+      - main.go
+      - "Lilypond carols/*.ly"
+    generates:
+      - carol_booklet.pdf
+
+  booklet:
+    desc: Create print-ready booklet (2-up A5 on A4, double-sided). Requires pdfjam (texlive-extra-utils)
+    deps: [gen]
+    cmds:
+      - pdfjam --booklet true --landscape --a4paper --outfile carol_booklet_print.pdf carol_booklet.pdf
+      - cp carol_booklet_print.pdf ~/Cloudstation/temp/
+    generates:
+      - carol_booklet_print.pdf
+
+  lilypond:
+    alias: [ly]
+    desc: Regenerate all sheet music PDFs from .ly files
+    cmds:
+      - find "Lilypond carols" -name "*.ly" -exec sh -c 'lilypond --output="$(dirname "$1")" "$1"' _ {} \;
+ 
+  tree:
+    desc: Regenerate Twelvedays of Christmans sheet music PDFs from .ly files
+    cmds:
+      - lilypond --output=Lilypond\ carols/TwelveDaysOfChristmas Lilypond\ carols/TwelveDaysOfChristmas.ly
+
+  clean:
+    desc: Remove generated files
+    cmds:
+      - rm -f carol_booklet.tex carol_booklet.pdf carol_booklet_print.pdf
+      - rm -f *.aux *.log *.out

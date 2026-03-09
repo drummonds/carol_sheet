@@ -1,0 +1,182 @@
+\header {
+  filename = "HarkTheHerald-Complete.ly"
+  enteredby = "Humphrey Drummond"
+  composer = "from Mendelssohn, 1840"
+  poet = "Rev. Charles Wesley"
+  date=""
+  title = "Hark the Herald Angels Sing"
+  metre = "Mendelssohn Ten 7's."
+  meter = \metre
+  copyright = "Public Domain"
+  style = "Hymn"
+  mutopiacomposer = \composer
+  mutopiapoet=\poet
+  maintainer = "Humphrey Drummond"
+  maintainerEmail = "hum3@drummond.info"
+  lastupdated = "2021/Dec/11"
+}
+
+\version "2.21.1"
+
+\paper {
+  #(set-paper-size "a4")
+  between-system-padding = #1
+}
+
+global= {
+  \time 4/4
+  \key f \major
+  \set Staff.minimumVerticalExtent = #'(-4 . 4)
+}
+
+sop = \context Voice = "sop"    {
+  \voiceOne
+  c'4 f' f'4. e'8 f'4 a' a'(g') \bar "||"
+  c'' c'' c''4. bes'8 a'4 g' a'2 \bar "||" \break
+  c'4 f' f'4. e'8 f'4 a' a'(g') \bar "||"
+  c'' g' g'4. e'8 e'4 d' c'2 \bar "||" \break
+  c''4 c'' c'' f' bes' a' a'( g') \bar "||"
+  c''4 c'' c'' f' bes' a' a'( g') \bar "||" \break
+  d'' d'' d'' c'' bes' a' bes'2 \bar "||"
+  g'4 a'8( bes') c''4. f'8 f'4 g' a'2 \bar "||"  \break
+
+  d''4. ^ \markup { \large \italic Refrain} d''8 d''4 c'' bes' a' bes'2 \bar "||"
+  g'4 a'8( bes') c''4. f'8 f'4 g' f'2\bar "||"
+
+}
+
+alto=\context Voice = "alto"   {
+  \voiceTwo
+  c'4 c' c'4. c'8 c'4 f' f'( e')
+  f' e' d' g' f' e' f'2
+  c'4 c' c'4. c'8 a4 f' f'2
+  e'4 d' e'4. c'8 c'4 b c'2
+  c'4 c' c' f' g' f' f'( e')
+  c'4 c' c' f' g' f' f'( e')
+  bes' bes' bes' a' g' fis' g'2
+  e'4 e' f'4. c'8 c'4 e' f'2
+  bes'4 bes'bes'a' g' fis' g'2
+  c'4 e' f'4. c'8 c'4 e' f'2
+}
+
+tenor = \context Voice = "tenor"   {
+  \voiceOne
+  a4 a a4. g8 f4 c' c'2
+  c'4 c' d' d' c' c' c'2
+  a4 a a4. g8 f4 c' d'2
+  c'4 d' g4. g8 a4 f e2
+  c'4 c' c' c' c' c' c'2
+  c'4 c' c' c' c' c' c'2
+  d'4 d' d' d' d' c' bes2
+  c'4 c' c'4. a8 a4 c' c'2
+  d'4. d'8 d'4 c' bes a bes2
+  c'4 c' c'4. a8 a4 bes a2
+}
+
+bass = \context Voice = "bass"   {
+  \voiceTwo
+  f4 f f c a, f, c2
+  a,4 a, bes, bes, c c f2
+  f4 f f c d c b,4. g,8
+  a,4 b, c e, f, g, c2
+  c'4 c' c' a e f c2
+  c'4 c' c' a e f c2
+  bes,4 bes, bes, bes, bes, d g2
+  bes4 bes a f c c f2
+  bes4 bes bes a g fis g( f)
+  e bes a f c c <f f,>2
+}
+accomp=\chordmode {
+  f1*2   c1 f4 c4 f2
+  f1 d:m c1 c4 g c2
+  f1 d2:m c2 c4 f4*3 d2:m c2
+  bes4*3 f4:7 g1:m c:7 c2:7 f
+  bes4*3 f4:7 g1:m c:7 c2:7 f
+}
+
+
+
+stanzaa = \lyricmode {
+  Hark! the her -- ald an -- gels sing,
+  Glo -- ry to the new born King,
+  Peace on earth, and mer -- cy mild,
+  God and sin -- ners re -- con -- ciled.
+  Joy -- ful all ye na -- tions, rise,
+  Join the tri -- umph of the skies;
+  With the-an -- gel -- ic host pro -- claim
+  'Christ is born in Beth -- le -- hem.'
+  Hark! the her -- ald an -- gels sing,
+  Glo -- ry to the new born King,
+}
+
+stanzab = \lyricmode {
+  Christ, by high -- est heaven a -- dored,
+  Christ, the e -- ver -- last -- ing Lord
+  Late in time be -- hold Him come,
+  Off -- spring of a Vir -- gin's womb.
+  Veiled in flesh the God -- head see!
+  Hail, the-In -- car -- nate De -- i -- ty!
+  Pleased as Man with man to dwell,
+  Je -- sus, our Em -- man -- u -- el.
+}
+stanzac = \lyricmode {
+  Hail the heaven born Prince of peace!
+  Hail, the Sun of right -- eous -- ness!
+  Light and life to all He brings,
+  Ris'n with heal -- ing in His wings.
+  Mild He lays His glo -- ry by,
+  Born that man no more may die,
+  Born to raise the sons of earth,
+  Born to give them sec -- ond birth.
+}
+stanzad = \lyricmode {
+
+}
+stanzae = \lyricmode {
+
+}
+stanzaf = \lyricmode {
+
+}
+
+\score {
+  \transpose f g
+  \context ChoirStaff <<
+    \context ChordNames \accomp
+    \unset ChoirStaff.melismaBusyProperties
+    \context Staff ="upper"  {
+      \clef "G" <<
+        \global
+        \sop
+        % \alto
+      >>
+    }
+
+    \context Lyrics = "LyrOne" \lyricsto "sop"  { \stanzaa }
+    \context Lyrics = "LyrTwo" \lyricsto "sop"  { \stanzab }
+    \context Lyrics = "LyrThree" \lyricsto "sop"  { \stanzac }
+    % \context Staff = "lower"  { \clef "F"<<
+    % 	\global
+    % 	\tenor
+    % 	\bass
+    % >>}
+  >>
+  \layout{
+    indent = 0.0\pt
+    \context {
+      \ChordNames
+      \override ChordName  #'style = #'american
+      chordChanges = ##t
+    }
+  }
+
+  \midi {
+    \context {
+      \Score
+      tempoWholesPerMinute = #(ly:make-moment 120 4)
+    }
+  }
+
+
+}
+
