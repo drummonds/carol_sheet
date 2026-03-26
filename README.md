@@ -21,5 +21,4 @@ This is a simple file to extract lyrics from lilypond files and create a carol s
 | Documentation | https://h3-carol-sheet.statichost.page/ |
 | Source (Codeberg) | https://codeberg.org/hum3/carol_sheet |
 | Mirror (GitHub) | https://github.com/drummonds/carol_sheet |
-| Docs repo | https://codeberg.org/hum3/carol_sheet-docs |
 
